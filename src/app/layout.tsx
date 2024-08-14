@@ -17,7 +17,7 @@ const notoSansJP = Noto_Sans_JP({
 export const metadata: Metadata = {
   title: 'mandalAchieve',
   description:
-    'マンダラートを使って「アイディアの発想」や「目標達成」をサポートするアプリ',
+    'マンダラートを使って「アイデアの発想」や「目標達成」をサポートするアプリ',
 };
 
 export default function RootLayout({
