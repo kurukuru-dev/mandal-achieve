@@ -32,12 +32,13 @@ const config = {
           DEFAULT: 'var(--accent)',
           hover: 'var(--accent-hover)'
         },
+        popover: 'var(--popover)',
+        ring: 'var(--ring)',
 
         // shadcnUiデフォルト値
         // TODO: 不要であれば削除
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
-        ring: 'hsl(var(--ring))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         destructive: {
@@ -47,10 +48,6 @@ const config = {
         muted: {
           DEFAULT: 'hsl(var(--muted))',
           foreground: 'hsl(var(--muted-foreground))'
-        },
-        popover: {
-          DEFAULT: 'hsl(var(--popover))',
-          foreground: 'hsl(var(--popover-foreground))'
         },
         card: {
           DEFAULT: 'hsl(var(--card))',
