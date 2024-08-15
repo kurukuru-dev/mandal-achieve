@@ -14,7 +14,8 @@
     --accent-hover: #3e5990;
     --caution: #ffc107;
     --popover: #009999;
-    --ring: #009999;
+    --popover-focus: #00b7b7;
+    --ring: #00b7b7;
 
     /* shadcnUiのデフォルト値 */
     /* TODO: 不要であれば削除 */

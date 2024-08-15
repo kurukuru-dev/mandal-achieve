@@ -32,7 +32,10 @@ const config = {
           DEFAULT: 'var(--accent)',
           hover: 'var(--accent-hover)'
         },
-        popover: 'var(--popover)',
+        popover: {
+          DEFAULT: 'var(--popover)',
+          focus: 'var(--popover-focus)'
+        },
         ring: 'var(--ring)',
 
         // shadcnUiデフォルト値
