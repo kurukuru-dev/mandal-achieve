@@ -1,8 +1,8 @@
 export default function Home() {
   return (
-    <main>
-      <h1>MandalAchive</h1>
-      <h2>
+    <main className="h-full min-h-screen flex flex-col items-center justify-center">
+      <h1 className="text-main text-5xl">MandalAchive</h1>
+      <h2 className="text-main text-xl">
         マンダラートを使用して「アイデアの創造」「目標達成」をサポートするアプリ
       </h2>
       <select name="mode" id="">
