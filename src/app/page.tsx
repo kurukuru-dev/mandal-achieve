@@ -1,8 +1,10 @@
+import { Button } from '@/components/ui/button';
+
 export default function Home() {
   return (
     <main className="h-full min-h-screen flex flex-col items-center justify-center">
-      <h1 className="text-main text-5xl">MandalAchive</h1>
-      <h2 className="text-main text-xl">
+      <h1 className="text-primary text-6xl">MandalAchive</h1>
+      <h2 className="text-primary text-xl">
         マンダラートを使用して「アイデアの創造」「目標達成」をサポートするアプリ
       </h2>
       <select name="mode" id="">
@@ -10,7 +12,7 @@ export default function Home() {
         <option value="achieve">目標達成</option>
       </select>
       <input type="text" placeholder="メインテーマを入力" />
-      <button>スタート</button>
+      <Button>スタート</Button>
       <button>使い方</button>
       <footer>
         <p>© 2024 Your Name. All rights reserved.</p>
