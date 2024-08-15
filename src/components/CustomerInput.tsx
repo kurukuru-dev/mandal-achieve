@@ -5,7 +5,6 @@ import {
   SelectValue,
   SelectContent,
   SelectGroup,
-  SelectLabel,
   SelectItem
 } from '@/components/ui/select';
 import { Input } from '@/components/ui/input';
