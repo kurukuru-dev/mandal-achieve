@@ -27,7 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={`${poppins.variable} ${notoSansJP.variable}`}>
+      <body
+        className={`${poppins.variable} ${notoSansJP.variable} bg-secondary`}
+      >
         {children}
       </body>
     </html>
