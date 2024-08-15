@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --font-montserrat: 'Montserrat', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
   --font-noto-sans-jp: 'Noto Sans JP', sans-serif;
 }
 
 h1,
 h2,
 h3 {
-  font-family: var(--font-montserrat);
+  font-family: var(--font-poppins);
 }
 
 body {
