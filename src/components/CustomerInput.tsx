@@ -10,7 +10,6 @@ import {
 } from '@/components/ui/select';
 import { Input } from '@/components/ui/input';
 
-// q: 顧客がモードを選択し、メインテーマを入力してスタートボタンを押す
 export default function CustomerInput() {
   return (
     <div className="mt-6 flex items-center gap-x-2">
