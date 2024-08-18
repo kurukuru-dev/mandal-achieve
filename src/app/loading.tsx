@@ -2,8 +2,8 @@ import { LoaderCircle } from 'lucide-react';
 
 export default function Loading() {
   return (
-    <div className="h-full flex flex-col justify-center items-center">
-      <LoaderCircle className="w-12 h-12 text-primary animate-spin" />
+    <div className="flex h-full flex-col items-center justify-center">
+      <LoaderCircle className="h-12 w-12 animate-spin text-primary" />
     </div>
   );
 }
