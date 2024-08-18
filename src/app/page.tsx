@@ -10,8 +10,8 @@ export default function Home() {
           マンダラートを使用して「アイデアの創造」「目標達成」をサポートするアプリ
         </h2>
         <CustomerInput />
-        <Footer />
       </main>
+      <Footer />
     </div>
   );
 }
