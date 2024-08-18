@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import Logo from '@/components/ui/logo';
 
 export default function Footer() {
   return (
@@ -7,47 +8,32 @@ export default function Footer() {
       <div className="flex flex-col gap-y-1 text-center">
         <p className="h-6">© 2024 kurukuru-dev</p>
         <div className="flex h-6 justify-center gap-x-16">
-          <nav>
+          <nav className="flex gap-x-4">
             <Link
               href="/disclaimer"
               className="underline-offset-2 hover:underline"
             >
               免責事項
             </Link>
-            <Link
-              href="/faq"
-              className="ml-4 underline-offset-2 hover:underline"
-            >
+            <Link href="/faq" className="underline-offset-2 hover:underline">
               FAQ
             </Link>
           </nav>
-          <div className="flex h-6">
-            <Link
-              href="#"
-              className="relative w-6 rounded-full border-2"
-              rel="noopener noreferrer"
-            >
-              <Image
-                src="/x.svg"
-                alt="X(旧Twitter)のロゴ"
-                width={11.736}
-                height={12}
-                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform"
-              />
-            </Link>
-            <Link
+          <div className="flex h-6 gap-x-4">
+            <Logo
+              href="https://twitter.com/kurukuru_dev"
+              imgSrc="/x.svg"
+              imgAlt="X(旧Twitter)のロゴ"
+              imgWidth={11.736}
+              imgHeight={12}
+            />
+            <Logo
               href="https://github.com/kurukuru-dev/mandal-achieve"
-              className="relative ml-4 w-6 rounded-full border-2"
-              rel="noopener noreferrer"
-            >
-              <Image
-                src="/github.svg"
-                alt="GitHubのロゴ"
-                width={15.3}
-                height={15}
-                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform"
-              />
-            </Link>
+              imgSrc="/github.svg"
+              imgAlt="GitHubのロゴ"
+              imgWidth={15.3}
+              imgHeight={15}
+            />
           </div>
         </div>
       </div>
