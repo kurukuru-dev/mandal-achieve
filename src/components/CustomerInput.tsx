@@ -25,7 +25,7 @@ export default function CustomerInput() {
         </SelectContent>
       </Select>
       <Input type="text" placeholder="メインテーマを入力" />
-      <Button>スタート</Button>
+      <Button variant="accent">スタート</Button>
       <button title="使い方" className="h-6 w-6">
         <CircleHelp className="text-accent hover:text-accent-hover" />
       </button>
