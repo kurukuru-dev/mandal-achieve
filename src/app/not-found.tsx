@@ -5,7 +5,7 @@ export default function NotFound() {
   return (
     <div className="h-full flex flex-col justify-center items-center">
       <h2 className="text-xl">お探しのページは見つかりませんでした。</h2>
-      <Button className="mt-4">
+      <Button className="mt-4" asChild>
         <Link href="/">TOPに戻る</Link>
       </Button>
     </div>
