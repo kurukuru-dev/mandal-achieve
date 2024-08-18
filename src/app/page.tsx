@@ -1,5 +1,5 @@
-import CustomerInput from '@/components/CustomerInput';
-import Footer from '@/components/Footer';
+import CustomerInput from '@/components/customerInput';
+import Footer from '@/components/footer';
 
 export default function Home() {
   return (
