@@ -1,4 +1,5 @@
 import CustomerInput from '@/components/customerInput';
+import HowToButton from '@/components/howToButton';
 import Footer from '@/components/footer';
 
 export default function Home() {
@@ -9,7 +10,10 @@ export default function Home() {
         <h2 className="text-xl text-primary">
           マンダラートを使用して「アイデアの創造」「目標達成」をサポートするアプリ
         </h2>
-        <CustomerInput />
+        <div className="mt-6 flex items-center gap-x-2">
+          <CustomerInput />
+          <HowToButton />
+        </div>
       </main>
       <Footer />
     </div>

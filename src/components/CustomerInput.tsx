@@ -1,4 +1,7 @@
-import { CircleHelp } from 'lucide-react';
+'use client';
+
+import React from 'react';
+import { useRouter } from 'next/router';
 import { Button } from '@/components/ui/button';
 import {
   Select,
@@ -11,9 +14,26 @@ import {
 import { Input } from '@/components/ui/input';
 
 export default function CustomerInput() {
+  // const router = useRouter();
+
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const selectedMode = e.currentTarget.mode.value;
+    const mainTheme = e.currentTarget.mainTheme.value;
+
+    // if (router.isReady) {
+    //   if (selectedMode === 'create') {
+    //     router.push(`/create?mainTheme=${mainTheme}`);
+    //   } else if (selectedMode === 'achive') {
+    //     router.push(`/achive?mainTheme=${mainTheme}`);
+    //   }
+    // }
+  };
+
   return (
-    <div className="mt-6 flex items-center gap-x-2">
-      <Select>
+    <form onSubmit={onSubmit}>
+      <Select name="mode">
         <SelectTrigger className="w-60">
           <SelectValue placeholder="モードを選択" />
         </SelectTrigger>
@@ -24,11 +44,8 @@ export default function CustomerInput() {
           </SelectGroup>
         </SelectContent>
       </Select>
-      <Input type="text" placeholder="メインテーマを入力" />
+      <Input type="text" name="mainTheme" placeholder="メインテーマを入力" />
       <Button variant="accent">スタート</Button>
-      <button title="使い方" className="h-6 w-6">
-        <CircleHelp className="text-accent hover:text-accent-hover" />
-      </button>
-    </div>
+    </form>
   );
 }
