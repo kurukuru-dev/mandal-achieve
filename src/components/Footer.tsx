@@ -3,7 +3,7 @@ import Logo from '@/components/ui/logo';
 
 export default function Footer() {
   return (
-    <footer className="absolute bottom-0 left-0 mx-auto w-full bg-primary p-2 text-sm text-white">
+    <footer className="absolute bottom-0 left-0 mx-auto w-full bg-primary p-2 text-white">
       <div className="flex flex-col gap-y-1 text-center">
         <p className="h-6">© 2024 kurukuru-dev</p>
         <div className="flex h-6 justify-center gap-x-16">
