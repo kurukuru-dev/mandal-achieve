@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import {
   Select,
@@ -14,7 +14,7 @@ import {
 import { Input } from '@/components/ui/input';
 
 export default function CustomerInput() {
-  // const router = useRouter();
+  const router = useRouter();
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -22,17 +22,15 @@ export default function CustomerInput() {
     const selectedMode = e.currentTarget.mode.value;
     const mainTheme = e.currentTarget.mainTheme.value;
 
-    // if (router.isReady) {
-    //   if (selectedMode === 'create') {
-    //     router.push(`/create?mainTheme=${mainTheme}`);
-    //   } else if (selectedMode === 'achive') {
-    //     router.push(`/achive?mainTheme=${mainTheme}`);
-    //   }
-    // }
+    if (selectedMode === 'create') {
+      router.push(`/create?mainTheme=${mainTheme}`);
+    } else if (selectedMode === 'achive') {
+      router.push(`/achive?mainTheme=${mainTheme}`);
+    }
   };
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} className="flex gap-x-2">
       <Select name="mode">
         <SelectTrigger className="w-60">
           <SelectValue placeholder="モードを選択" />
