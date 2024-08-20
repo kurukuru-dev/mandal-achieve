@@ -42,7 +42,12 @@ export default function CustomerInput() {
           </SelectGroup>
         </SelectContent>
       </Select>
-      <Input type="text" name="mainTheme" placeholder="メインテーマを入力" />
+      <Input
+        type="text"
+        name="mainTheme"
+        placeholder="メインテーマを入力"
+        autoComplete="off"
+      />
       <Button variant="accent">スタート</Button>
     </form>
   );
