@@ -37,7 +37,7 @@ export default function CustomerInput() {
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>
-            <SelectItem value="create">アイデア創造</SelectItem>
+            <SelectItem value="create">アイデア発想</SelectItem>
             <SelectItem value="achive">目標達成</SelectItem>
           </SelectGroup>
         </SelectContent>
