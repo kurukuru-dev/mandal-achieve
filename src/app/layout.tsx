@@ -1,33 +1,35 @@
 import type { Metadata } from 'next';
-import { Montserrat, Noto_Sans_JP } from 'next/font/google';
+import { Poppins, Noto_Sans_JP } from 'next/font/google';
 import './globals.css';
 
-const montserrat = Montserrat({
+const poppins = Poppins({
   subsets: ['latin'],
   weight: ['700'],
-  variable: '--font-montserrat',
+  variable: '--font-poppins'
 });
 
 const notoSansJP = Noto_Sans_JP({
   subsets: ['latin'],
   weight: ['400'],
-  variable: '--font-noto-sans-jp',
+  variable: '--font-noto-sans-jp'
 });
 
 export const metadata: Metadata = {
   title: 'mandalAchieve',
   description:
-    'マンダラートを使って「アイディアの発想」や「目標達成」をサポートするアプリ',
+    'マンダラートを使って「アイデアの発想」や「目標達成」をサポートするアプリ'
 };
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <html lang="ja">
-      <body className={`${montserrat.variable} ${notoSansJP.variable}`}>
+      <body
+        className={`${poppins.variable} ${notoSansJP.variable} bg-secondary`}
+      >
         {children}
       </body>
     </html>
