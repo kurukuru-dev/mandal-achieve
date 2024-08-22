@@ -1,4 +1,4 @@
-import MODE from '@/const/mode';
+import MODE from '@/constants/mode';
 import {
   Select,
   SelectTrigger,
