@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 
 export default function Header() {
   return (
-    <header className="h-13 mx-auto w-10/12">
+    <header className="mx-auto h-13 w-10/12">
       <div className="flex min-h-full items-center justify-between">
         <ModeTitle />
         <div className="flex items-center gap-x-1">

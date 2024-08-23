@@ -17,8 +17,7 @@ const notoSansJP = Noto_Sans_JP({
 
 export const metadata: Metadata = {
   title: 'mandalAchieve',
-  description:
-    'マンダラートを使って「アイデアの発想」や「目標達成」をサポートするアプリ'
+  description: 'マンダラートを使って「アイデアの発想」や「目標達成」をサポートするアプリ'
 };
 
 export default function RootLayout({
@@ -28,9 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body
-        className={`${poppins.variable} ${notoSansJP.variable} bg-secondary`}
-      >
+      <body className={`${poppins.variable} ${notoSansJP.variable} bg-secondary`}>
         <div className="h-screen">
           {children}
           <Footer />

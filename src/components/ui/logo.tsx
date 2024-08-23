@@ -13,11 +13,7 @@ export default function Logo(props: Props) {
   const { href, imgSrc, imgAlt, imgWidth, imgHeight } = props;
 
   return (
-    <Link
-      href={href}
-      className="relative w-6 rounded-full border-2"
-      rel="noopener noreferrer"
-    >
+    <Link href={href} className="relative w-6 rounded-full border-2" rel="noopener noreferrer">
       <Image
         src={imgSrc}
         alt={imgAlt}

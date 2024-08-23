@@ -3,15 +3,12 @@ import Logo from '@/components/ui/logo';
 
 export default function Footer() {
   return (
-    <footer className="h-17 absolute bottom-0 left-0 mx-auto min-w-full bg-primary p-2 text-white">
+    <footer className="absolute bottom-0 left-0 mx-auto h-17 min-w-full bg-primary p-2 text-white">
       <div className="flex flex-col gap-y-1 text-center">
         <p className="h-6">© 2024 kurukuru-dev</p>
         <div className="flex h-6 justify-center gap-x-16">
           <nav className="flex gap-x-4">
-            <Link
-              href="/disclaimer"
-              className="underline-offset-2 hover:underline"
-            >
+            <Link href="/disclaimer" className="underline-offset-2 hover:underline">
               免責事項
             </Link>
             <Link href="/faq" className="underline-offset-2 hover:underline">
