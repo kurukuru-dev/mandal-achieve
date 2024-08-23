@@ -8,17 +8,10 @@ import {
   SelectItem
 } from '@/components/ui/select';
 
-import { ModeValueLiteral } from '@/types/mode';
-
-type Props = {
-  mode?: ModeValueLiteral;
-  className: string;
-};
-
-export default function ModeSelect({ mode, className }: Props) {
+export default function ModeSelect() {
   return (
-    <Select defaultValue={mode} name="mode">
-      <SelectTrigger className={className}>
+    <Select name="mode">
+      <SelectTrigger>
         <SelectValue placeholder="モードを選択" />
       </SelectTrigger>
       <SelectContent>

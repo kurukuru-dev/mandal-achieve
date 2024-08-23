@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Poppins, Noto_Sans_JP } from 'next/font/google';
 import './globals.css';
+import Footer from '@/components/footer';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -30,7 +31,10 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${notoSansJP.variable} bg-secondary`}
       >
-        {children}
+        <div className="h-screen">
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );
