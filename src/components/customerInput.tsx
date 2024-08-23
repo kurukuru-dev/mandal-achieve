@@ -31,8 +31,8 @@ export default function CustomerInput() {
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>
-            <SelectItem value={MODE.CREATE}>アイデア発想</SelectItem>
-            <SelectItem value={MODE.ACHIVE}>目標達成</SelectItem>
+            <SelectItem value={MODE.CREATE}>{MODE.CREATE_IDEA_JP}</SelectItem>
+            <SelectItem value={MODE.ACHIVE}>{MODE.ACHIVE_GOAL_JP}</SelectItem>
           </SelectGroup>
         </SelectContent>
       </Select>
