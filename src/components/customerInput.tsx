@@ -26,7 +26,7 @@ export default function CustomerInput() {
   return (
     <form onSubmit={onSubmit} className="flex gap-x-2">
       <Select name="mode">
-        <SelectTrigger>
+        <SelectTrigger className="w-60">
           <SelectValue placeholder="モードを選択" />
         </SelectTrigger>
         <SelectContent>
