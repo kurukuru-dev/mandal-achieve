@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={`${poppins.variable} ${notoSansJP.variable} bg-secondary`}>
-        <div className="h-screen">
+        <div className="flex min-h-screen flex-col overflow-hidden">
           {children}
           <Footer />
         </div>
