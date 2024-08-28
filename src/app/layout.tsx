@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Poppins, Noto_Sans_JP } from 'next/font/google';
 import './globals.css';
+import Footer from '@/components/footer';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -16,8 +17,7 @@ const notoSansJP = Noto_Sans_JP({
 
 export const metadata: Metadata = {
   title: 'mandalAchieve',
-  description:
-    'マンダラートを使って「アイデアの発想」や「目標達成」をサポートするアプリ'
+  description: 'マンダラートを使って「アイデアの発想」や「目標達成」をサポートするアプリ'
 };
 
 export default function RootLayout({
@@ -27,10 +27,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body
-        className={`${poppins.variable} ${notoSansJP.variable} bg-secondary`}
-      >
-        {children}
+      <body className={`${poppins.variable} ${notoSansJP.variable} bg-secondary`}>
+        <div className="flex min-h-screen flex-col overflow-hidden">
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );

@@ -1,4 +1,4 @@
-import { CircleHelp } from "lucide-react";
+import { CircleHelp } from 'lucide-react';
 
 export default function HowToButton() {
   return (
