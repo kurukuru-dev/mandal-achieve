@@ -1,11 +1,7 @@
 import type { Config } from 'tailwindcss';
 
 const config = {
-  content: [
-    './src/pages/**/*.{ts,tsx}',
-    './src/components/**/*.{ts,tsx}',
-    './src/app/**/*.{ts,tsx}'
-  ],
+  content: ['./src/**/*.{ts,tsx}'],
   prefix: '',
   theme: {
     container: {
@@ -63,8 +59,7 @@ const config = {
         sm: 'calc(var(--radius) - 4px)'
       },
       height: {
-        '13': '3.25rem',
-        '17': '4.25rem'
+        '13': '3.25rem'
       },
       keyframes: {
         'accordion-down': {
