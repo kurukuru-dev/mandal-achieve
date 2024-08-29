@@ -1,4 +1,3 @@
-import Header from '@/components/header';
 import { MandalartLayout, MandalartTable } from '@/features/mandalart';
 
 // ダミーデータ
@@ -90,8 +89,7 @@ const items = [
 export default function Mandalart() {
   return (
     <>
-      <Header />
-      <main className="mx-auto mb-2 flex w-10/12 flex-grow">
+      <main className="mx-auto my-2 flex w-10/12 flex-grow">
         <MandalartLayout>
           {items.map((item) => (
             <MandalartTable key={item.id} userInputs={item.userInputs} />
