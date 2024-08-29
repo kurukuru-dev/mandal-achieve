@@ -1,6 +1,6 @@
 import MODE from '@/constants/mode';
-import CustomerInput from '@/components/customerInput';
 import HowToButton from '@/components/howToButton';
+import { UserInput } from '@/features/userInput';
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
         マンダラートを使用して「{MODE.CREATE_IDEA_JP}」「{MODE.ACHIVE_GOAL_JP}」をサポートするアプリ
       </h2>
       <div className="mt-6 flex items-center justify-center gap-x-2">
-        <CustomerInput />
+        <UserInput />
         <HowToButton />
       </div>
     </main>
