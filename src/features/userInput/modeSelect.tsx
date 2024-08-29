@@ -11,7 +11,7 @@ import {
 export default function ModeSelect() {
   return (
     <Select name="mode">
-      <SelectTrigger>
+      <SelectTrigger className="w-60">
         <SelectValue placeholder="モードを選択" />
       </SelectTrigger>
       <SelectContent>

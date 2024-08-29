@@ -34,7 +34,7 @@ const config = {
         },
         ring: 'var(--ring)',
 
-        // shadcnUiデフォルト値
+        // shadcn/uiデフォルト値
         // TODO: 不要であれば削除
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
@@ -59,7 +59,12 @@ const config = {
         sm: 'calc(var(--radius) - 4px)'
       },
       height: {
-        '13': '3.25rem'
+        '13': '3.25rem',
+        '17': '4.25rem'
+      },
+      inset: {
+        '1/24': '4.166667%',
+        '19': '4.75rem'
       },
       keyframes: {
         'accordion-down': {
