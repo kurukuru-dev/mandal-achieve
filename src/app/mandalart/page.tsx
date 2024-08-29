@@ -1,4 +1,4 @@
-import { MandalartLayout, MandalartTable } from '@/features/mandalart';
+import { MandalartLayout, MandalartNav, MandalartTable } from '@/features/mandalart';
 
 // ダミーデータ
 // TODO: データ構造考える余地あり
@@ -89,6 +89,9 @@ const items = [
 export default function Mandalart() {
   return (
     <>
+      <header className="right-1/24 bottom-19 absolute translate-x-1/2 transform">
+        <MandalartNav />
+      </header>
       <main className="mx-auto my-2 flex w-10/12 flex-grow">
         <MandalartLayout>
           {items.map((item) => (
