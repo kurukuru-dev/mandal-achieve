@@ -92,7 +92,7 @@ export default function Mandalart() {
       <header className="right-1/24 bottom-19 absolute translate-x-1/2 transform">
         <MandalartNav />
       </header>
-      <main className="mx-auto my-2 flex w-10/12 flex-grow">
+      <main className="mx-auto flex flex-grow" style={{ width: 'calc(83.333333% + 0.5rem)' }}>
         <MandalartLayout>
           {items.map((item) => (
             <MandalartTable key={item.id} userInputs={item.userInputs} />
