@@ -1,6 +1,7 @@
-import { Camera, FileText, ArrowRightLeft } from 'lucide-react';
+import { FileText, ArrowRightLeft } from 'lucide-react';
 import HowToButton from '@/components/howToButton';
 import { Button } from '@/components/ui/button';
+import ScreenShotButton from '@/components/screenShotButton';
 
 export default function MandalartNav({ className }: { className?: string }) {
   return (
@@ -20,9 +21,7 @@ export default function MandalartNav({ className }: { className?: string }) {
           </Button>
         </li>
         <li>
-          <Button variant="accent" size="icon">
-            <Camera />
-          </Button>
+          <ScreenShotButton />
         </li>
       </ul>
     </nav>
