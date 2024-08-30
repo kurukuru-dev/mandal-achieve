@@ -3,7 +3,7 @@
 import html2canvas from 'html2canvas';
 import { Camera } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useToast } from '@/components/ui/use-toast';
+import { useToast } from '@/components/ui/toast';
 
 export default function ScreenShotButton() {
   const { toast } = useToast();
