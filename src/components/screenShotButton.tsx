@@ -9,7 +9,10 @@ export default function ScreenShotButton() {
   const { toast } = useToast();
 
   const handleScreenShot = () => {
-    html2canvas(document.getElementById('mandalrtWrap') as HTMLElement)
+    const target = document.getElementById('mandalrtWrap');
+    if (!target) return null;
+
+    html2canvas(target as HTMLElement)
       .then((canvas) => {
         const link = document.createElement('a');
         link.href = canvas.toDataURL();
