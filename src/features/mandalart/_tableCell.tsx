@@ -1,10 +1,14 @@
 'use client';
 
 import React, { useEffect, useState, useRef } from 'react';
+import { useSearchParams } from 'next/navigation';
+import MODE from '@/constants/mode';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 
 export default function TableCell({ input }: { input: string }) {
+  const mode = useSearchParams().get('mode');
+
   const [isInputtingFlg, setisInputtingFlg] = useState<boolean>(false);
   const [userInput, setUserInput] = useState<string>(input);
   const [isCompleted, setisCompleted] = useState<boolean>(false);
@@ -39,14 +43,16 @@ export default function TableCell({ input }: { input: string }) {
           <p className={`text-sm ${userInput ? 'text-black' : 'text-gray-300'}`}>
             {userInput ? userInput : '未入力'}
           </p>
-          <Button
-            size="iconSm"
-            variant={isCompleted ? 'default' : 'outline'}
-            className="absolute bottom-1 right-1"
-            onClick={handleCompleteClick}
-          >
-            済
-          </Button>
+          {mode === MODE.ACHIVE && (
+            <Button
+              size="iconSm"
+              variant={isCompleted ? 'default' : 'outline'}
+              className="absolute bottom-1 right-1"
+              onClick={handleCompleteClick}
+            >
+              済
+            </Button>
+          )}
         </>
       )}
     </td>
