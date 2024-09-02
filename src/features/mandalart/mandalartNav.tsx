@@ -1,8 +1,7 @@
-import { ArrowRightLeft } from 'lucide-react';
 import HowToButton from '@/components/howToButton';
-import { Button } from '@/components/ui/button';
-import PdfButton from '@/components/pdfButton';
-import ScreenShotButton from '@/components/screenShotButton';
+import ToggleModeButton from './_toggleModeButton';
+import PdfButton from './_pdfButton';
+import ScreenShotButton from './_screenShotButton';
 
 export default function MandalartNav({ className }: { className?: string }) {
   return (
@@ -12,9 +11,7 @@ export default function MandalartNav({ className }: { className?: string }) {
           <HowToButton />
         </li>
         <li>
-          <Button variant="accent" size="icon">
-            <ArrowRightLeft />
-          </Button>
+          <ToggleModeButton />
         </li>
         <li>
           <PdfButton />
