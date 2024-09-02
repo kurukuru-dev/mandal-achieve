@@ -1,7 +1,7 @@
 import HowToButton from '@/components/howToButton';
-import ToggleModeButton from '@/components/toggleModeButton';
-import PdfButton from '@/components/pdfButton';
-import ScreenShotButton from '@/components/screenShotButton';
+import ToggleModeButton from './_toggleModeButton';
+import PdfButton from './_pdfButton';
+import ScreenShotButton from './_screenShotButton';
 
 export default function MandalartNav({ className }: { className?: string }) {
   return (
