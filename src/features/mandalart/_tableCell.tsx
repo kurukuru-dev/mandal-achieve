@@ -6,11 +6,11 @@ import MODE from '@/constants/mode';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 
-export default function TableCell({ input }: { input: string }) {
+export default function TableCell() {
   const mode = useSearchParams().get('mode');
 
   const [isInputtingFlg, setisInputtingFlg] = useState<boolean>(false);
-  const [userInput, setUserInput] = useState<string>(input);
+  const [userInput, setUserInput] = useState<string>('');
   const [isCompleted, setisCompleted] = useState<boolean>(false);
 
   const textareaRef = useRef<HTMLTextAreaElement>(null);
