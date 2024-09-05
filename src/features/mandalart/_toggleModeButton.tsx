@@ -10,9 +10,7 @@ export default function ToggleModeButton() {
   const currentMode = useSearchParams().get('mode');
 
   const handleToggleMode = () => {
-    const isCreateMode = currentMode === MODE.CREATE;
-
-    if (isCreateMode) {
+    if (currentMode === MODE.CREATE) {
       router.push(`/mandalart?mode=${MODE.ACHIVE}`);
     } else {
       router.push(`/mandalart?mode=${MODE.CREATE}`);

@@ -15,33 +15,29 @@ type Props = {
 export default function TableCell(props: Props) {
   const { tableIndex, cellData } = props;
 
-  const [mainTheme, setMainTheme] = useState<string>('');
-  const [isInputtingFlg, setisInputtingFlg] = useState<boolean>(false);
-  const [isCompleted, setisCompleted] = useState<boolean>(false);
-
-  useEffect(() => {
-    const mainTheme = localStorage.getItem('mainTheme') || '';
-    setMainTheme(mainTheme);
-  }, []);
-
-  const isCentralCellTheme = tableIndex === 5 && cellData.isCenter;
-  const initialContent = isCentralCellTheme ? mainTheme : cellData.content;
-
-  useEffect(() => {
-    setUserInput(initialContent);
-  }, [initialContent]);
-
   const [userInput, setUserInput] = useState<string>('');
+  const [isInputting, setisInputting] = useState<boolean>(false);
+  const [isCompleted, setisCompleted] = useState<boolean>(false);
 
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-  const mode = useSearchParams().get('mode');
+  // ローカルストレージからメインテーマを取得して、中央セルの場合はメインテーマを表示
+  useEffect(() => {
+    const mainTheme = localStorage.getItem('mainTheme') || '';
+
+    const isCentralCellTheme = tableIndex === 5 && cellData.isCenter;
+    const initialContent = isCentralCellTheme ? mainTheme : cellData.content;
+
+    setUserInput(initialContent);
+  }, [tableIndex, cellData]);
 
   useEffect(() => {
-    if (isInputtingFlg) {
+    if (isInputting) {
       textareaRef.current?.focus();
     }
-  }, [isInputtingFlg]);
+  }, [isInputting]);
+
+  const mode = useSearchParams().get('mode');
 
   const handleCompleteClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
@@ -50,13 +46,13 @@ export default function TableCell(props: Props) {
 
   return (
     <td
-      onClick={() => setisInputtingFlg(true)}
+      onClick={() => setisInputting(true)}
       className={`relative border p-1 text-center ${cellData.isCenter ? 'bg-secondary' : 'bg-white'}`}
     >
-      {isInputtingFlg ? (
+      {isInputting ? (
         <Textarea
           ref={textareaRef}
-          onBlur={() => setisInputtingFlg(false)}
+          onBlur={() => setisInputting(false)}
           onChange={(e) => setUserInput(e.target.value)}
           value={userInput}
         />
