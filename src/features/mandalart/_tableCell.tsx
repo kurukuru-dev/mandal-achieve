@@ -7,14 +7,35 @@ import MODE from '@/constants/mode';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 
-export default function TableCell({ cellData }: { cellData: TableCellData }) {
-  const mode = useSearchParams().get('mode');
+type Props = {
+  tableIndex: number;
+  cellData: TableCellData;
+};
 
+export default function TableCell(props: Props) {
+  const { tableIndex, cellData } = props;
+
+  const [mainTheme, setMainTheme] = useState<string>('');
   const [isInputtingFlg, setisInputtingFlg] = useState<boolean>(false);
-  const [userInput, setUserInput] = useState<string>(cellData.content);
   const [isCompleted, setisCompleted] = useState<boolean>(false);
 
+  useEffect(() => {
+    const mainTheme = localStorage.getItem('mainTheme') || '';
+    setMainTheme(mainTheme);
+  }, []);
+
+  const isCentralCellTheme = tableIndex === 5 && cellData.isCenter;
+  const initialContent = isCentralCellTheme ? mainTheme : cellData.content;
+
+  useEffect(() => {
+    setUserInput(initialContent);
+  }, [initialContent]);
+
+  const [userInput, setUserInput] = useState<string>('');
+
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  const mode = useSearchParams().get('mode');
 
   useEffect(() => {
     if (isInputtingFlg) {

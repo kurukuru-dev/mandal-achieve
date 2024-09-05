@@ -10,7 +10,7 @@ export default function Mandalart() {
       <main className="mx-auto flex flex-grow" style={{ width: 'calc(83.333333% + 0.5rem)' }}>
         <MandalartLayout>
           {initialTableData.map((table: TableData) => (
-            <MandalartTable key={table.id} tableData={table.cells} />
+            <MandalartTable key={table.id} tableIndex={table.id} tableData={table.cells} />
           ))}
         </MandalartLayout>
       </main>
