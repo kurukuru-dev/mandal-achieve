@@ -2,15 +2,16 @@
 
 import React, { useEffect, useState, useRef } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { TableCellData } from '@/data/initialTableData';
 import MODE from '@/constants/mode';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 
-export default function TableCell() {
+export default function TableCell({ cellData }: { cellData: TableCellData }) {
   const mode = useSearchParams().get('mode');
 
   const [isInputtingFlg, setisInputtingFlg] = useState<boolean>(false);
-  const [userInput, setUserInput] = useState<string>('');
+  const [userInput, setUserInput] = useState<string>(cellData.content);
   const [isCompleted, setisCompleted] = useState<boolean>(false);
 
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -29,7 +30,7 @@ export default function TableCell() {
   return (
     <td
       onClick={() => setisInputtingFlg(true)}
-      className="relative border bg-white p-1 text-center"
+      className={`relative border p-1 text-center ${cellData.isCenter ? 'bg-secondary' : 'bg-white'}`}
     >
       {isInputtingFlg ? (
         <Textarea
