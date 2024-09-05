@@ -11,7 +11,12 @@ export default function UserInput() {
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     const selectedMode = e.currentTarget.mode.value;
+    const mainTheme = e.currentTarget.mainTheme.value;
+
+    localStorage.setItem('mainTheme', mainTheme);
+
     router.push(`/mandalart?mode=${selectedMode}`);
   };
 
