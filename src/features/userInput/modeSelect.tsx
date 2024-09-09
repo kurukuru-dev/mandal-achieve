@@ -8,10 +8,10 @@ import {
   SelectItem
 } from '@/components/ui/select';
 
-export default function ModeSelect() {
+export default function ModeSelect({ onValueChange }: { onValueChange: (value: string) => void }) {
   return (
-    <Select name="mode">
-      <SelectTrigger className="w-60">
+    <Select name="mode" onValueChange={onValueChange}>
+      <SelectTrigger>
         <SelectValue placeholder="モードを選択" />
       </SelectTrigger>
       <SelectContent>
