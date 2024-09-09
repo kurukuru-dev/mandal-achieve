@@ -3,8 +3,8 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import ModeSelect from '@/features/userInput/modeSelect';
+import UserValidationText from './_userValidationText';
 import { Input } from '@/components/ui/input';
-import ValidationText from '@/components/validationText';
 import { Button } from '@/components/ui/button';
 
 export default function UserInput() {
@@ -38,19 +38,11 @@ export default function UserInput() {
   return (
     <form onSubmit={onSubmit} className="flex gap-x-2">
       <div className="relative w-36">
-        {errors.mode && (
-          <div className="absolute -top-6 left-1">
-            <ValidationText className="h-5">{errors.mode}</ValidationText>
-          </div>
-        )}
+        {errors.mode && <UserValidationText>{errors.mode}</UserValidationText>}
         <ModeSelect onValueChange={(value: string) => setSelectedMode(value)} />
       </div>
       <div className="relative w-72">
-        {errors.mainTheme && (
-          <div className="absolute -top-6 left-1">
-            <ValidationText className="h-5">{errors.mainTheme}</ValidationText>
-          </div>
-        )}
+        {errors.mainTheme && <UserValidationText>{errors.mainTheme}</UserValidationText>}
         <Input
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => setMainTheme(e.target.value)}
           value={mainTheme}
