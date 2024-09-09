@@ -1,4 +1,3 @@
 import { ModeValueLiteral } from './mode';
-import { MandalartData } from './mandalartData';
 
-export type { MandalartData, ModeValueLiteral };
+export type { ModeValueLiteral };
