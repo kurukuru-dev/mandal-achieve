@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useMemo } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { TableCellData } from '@/data/initialTableData';
 import MODE from '@/constants/mode';
@@ -16,20 +16,24 @@ export default function TableCell(props: Props) {
   const { tableIndex, cellData } = props;
 
   const [userInput, setUserInput] = useState<string>('');
-  const [isInputting, setisInputting] = useState<boolean>(false);
-  const [isCompleted, setisCompleted] = useState<boolean>(false);
+  const [isInputting, setIsInputting] = useState<boolean>(false);
+  const [isCompleted, setIsCompleted] = useState<boolean>(false);
 
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  const isCentralCellTheme = useMemo(
+    () => tableIndex === 5 && cellData.isCenter,
+    [tableIndex, cellData.isCenter]
+  );
 
   // ローカルストレージからメインテーマを取得して、中央セルの場合はメインテーマを表示
   useEffect(() => {
     const mainTheme = localStorage.getItem('mainTheme') || '';
 
-    const isCentralCellTheme = tableIndex === 5 && cellData.isCenter;
     const initialContent = isCentralCellTheme ? mainTheme : cellData.content;
 
     setUserInput(initialContent);
-  }, [tableIndex, cellData]);
+  }, [isCentralCellTheme, cellData.content]);
 
   useEffect(() => {
     if (isInputting) {
@@ -41,18 +45,18 @@ export default function TableCell(props: Props) {
 
   const handleCompleteClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
-    setisCompleted(!isCompleted);
+    setIsCompleted(!isCompleted);
   };
 
   return (
     <td
-      onClick={() => setisInputting(true)}
+      onClick={() => setIsInputting(true)}
       className={`relative border p-1 text-center ${cellData.isCenter ? 'bg-secondary' : 'bg-white'}`}
     >
-      {isInputting ? (
+      {!isCentralCellTheme && isInputting ? (
         <Textarea
           ref={textareaRef}
-          onBlur={() => setisInputting(false)}
+          onBlur={() => setIsInputting(false)}
           onChange={(e) => setUserInput(e.target.value)}
           value={userInput}
         />
