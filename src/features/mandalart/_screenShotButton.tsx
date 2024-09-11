@@ -1,7 +1,7 @@
 'use client';
 
-import html2canvas from 'html2canvas';
 import { Camera } from 'lucide-react';
+import domtoimage from 'dom-to-image';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/toast';
 
@@ -12,11 +12,12 @@ export default function ScreenShotButton() {
     const target = document.getElementById('mandalrtWrap');
     if (!target) return null;
 
-    html2canvas(target as HTMLElement)
-      .then((canvas) => {
+    domtoimage
+      .toSvg(target)
+      .then((dataUrl) => {
         const link = document.createElement('a');
-        link.href = canvas.toDataURL();
-        link.download = 'mandalart.png';
+        link.download = 'mandalart.svg';
+        link.href = dataUrl;
         link.click();
       })
       .then(() => {

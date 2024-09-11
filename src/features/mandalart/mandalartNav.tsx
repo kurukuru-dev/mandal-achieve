@@ -1,6 +1,5 @@
 import HowToButton from '@/components/howToButton';
 import ToggleModeButton from './_toggleModeButton';
-import PdfButton from './_pdfButton';
 import ScreenShotButton from './_screenShotButton';
 
 export default function MandalartNav({ className }: { className?: string }) {
@@ -12,9 +11,6 @@ export default function MandalartNav({ className }: { className?: string }) {
         </li>
         <li>
           <ToggleModeButton />
-        </li>
-        <li>
-          <PdfButton />
         </li>
         <li>
           <ScreenShotButton />
