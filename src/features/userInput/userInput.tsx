@@ -36,7 +36,7 @@ export default function UserInput() {
   };
 
   return (
-    <form onSubmit={onSubmit} className="flex gap-x-2">
+    <form onSubmit={onSubmit} className="mx-auto mt-7 flex gap-x-2">
       <div className="relative w-36">
         {errors.mode && <UserValidationText>{errors.mode}</UserValidationText>}
         <ModeSelect onValueChange={(value: string) => setSelectedMode(value)} />
