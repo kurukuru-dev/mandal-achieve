@@ -46,19 +46,24 @@ export default function TableCell(props: Props) {
 
   const mode = useSearchParams().get('mode');
 
-  const handleTableCell = () => {
+  const handleTableCellInput = () => {
     if (cellData.isCenter) {
       return;
     }
+
     setIsInputting(true);
   };
 
-  const handleChangeInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const updateTableThemeData = (newData: string) => {
     if (isMainTable) {
       const newTableThemeData = [...tableThemeData];
-      newTableThemeData[cellData.id - 1] = e.target.value;
+      newTableThemeData[cellData.id - 1] = newData;
       setTableThemeData(newTableThemeData);
     }
+  };
+
+  const handleChangeInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    updateTableThemeData(e.target.value);
     setUserInput(e.target.value);
   };
 
@@ -70,7 +75,7 @@ export default function TableCell(props: Props) {
 
   return (
     <td
-      onClick={() => handleTableCell()}
+      onClick={() => handleTableCellInput()}
       className={`relative border p-1 text-center ${cellData.isCenter ? 'bg-secondary' : 'bg-white'}`}
     >
       {!cellData.isCenter && isInputting ? (
