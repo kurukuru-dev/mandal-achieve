@@ -19,7 +19,7 @@ export const initialTableData: TableData[] = Array.from({ length: 9 }, (_, table
     ],
     [
       { id: 4, content: '', isCenter: false },
-      { id: 5, content: '', isCenter: true }, // 中央セル
+      { id: 5, content: '', isCenter: true }, // 中央セルはテーマ
       { id: 6, content: '', isCenter: false }
     ],
     [
