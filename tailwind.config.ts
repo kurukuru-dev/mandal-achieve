@@ -35,7 +35,6 @@ const config = {
         ring: 'var(--ring)',
 
         // shadcn/uiデフォルト値
-        // TODO: 不要であれば削除
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         background: 'hsl(var(--background))',
